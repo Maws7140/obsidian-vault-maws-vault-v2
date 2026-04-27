@@ -1,0 +1,63 @@
+
+/* -----------------------------
+   Simple Column Grid for Notes
+   Usage: wrap sections in <div class="cols"> and <div class="col"> blocks.
+   Responsive by default; no backgrounds; no callouts required.
+   You can tune min width and gap with CSS variables on the container:
+   <div class="cols" style="--col-min: 340px; --col-gap: 20px;">
+--------------------------------*/
+
+.markdown-preview-view .cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--col-min, 320px), 1fr));
+  gap: var(--col-gap, 16px);
+  align-items: start;
+}
+
+/* Optional: horizontal scroll single row */
+.markdown-preview-view .cols.nowrap {
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(var(--col-min, 320px), 1fr);
+  overflow-x: auto;
+  padding-bottom: 6px; /* room for scrollbar */
+  -ms-overflow-style: none;     /* Edge/IE */
+  scrollbar-width: none;        /* Firefox */
+}
+.markdown-preview-view .cols.nowrap::-webkit-scrollbar { display: none; } /* Chrome */
+
+.markdown-preview-view .col {
+  /* No background, no border — inherit theme */
+  padding: 0;
+}
+
+/* Trim extra top spacing so headings align nicely */
+.markdown-preview-view .col > *:first-child {
+  margin-top: 0;
+}
+
+/* Utility: force an exact column count when you want it */
+.markdown-preview-view .cols.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.markdown-preview-view .cols.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.markdown-preview-view .cols.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Utility: bigger/smaller gaps without inline style */
+.markdown-preview-view .cols.gap-s  { gap: 8px;  }
+.markdown-preview-view .cols.gap-m  { gap: 16px; }
+.markdown-preview-view .cols.gap-l  { gap: 24px; }
+.markdown-preview-view .cols.gap-xl { gap: 32px; }
+
+/* Optional: make embedded iframes/images fit column width */
+.markdown-preview-view .col iframe,
+.markdown-preview-view .col img {
+  max-width: 100%;
+}
+
+
+/* Optional: big clock typography (no background) */
+.markdown-preview-view.homepage .big-clock {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(48px, 8vw, 110px);
+  letter-spacing: 2px;
+  text-align: left;
+  padding: 4px 0;
+}
