@@ -1,0 +1,123 @@
+/*
+NEO TOKYO CLOCK WIDGET
+Shared CSS for DataviewJS and Datacore JSX versions
+
+HOW TO EDIT LATER
+- .ntd-clock-card controls the overall card
+- .ntd-clock-badge controls the sun/moon icon bubble
+- .ntd-clock-time controls the big time
+- .ntd-clock-date controls the date line
+*/
+
+.ntd-clock-card {
+  position: relative;
+  width: min(880px, 92%);
+  min-height: 260px;
+  padding: 34px 38px;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015)),
+    linear-gradient(180deg, rgba(12,12,16,0.96), rgba(8,8,12,0.96));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.38),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.ntd-clock-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -35deg,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 18px,
+      transparent 18px,
+      transparent 42px
+    );
+  pointer-events: none;
+}
+
+.ntd-clock-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ntd-clock-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.ntd-clock-badge[data-mode="night"] {
+  color: #ffd27d;
+}
+
+.ntd-clock-badge[data-mode="day"] {
+  color: #ffd95e;
+}
+
+.ntd-clock-badge[data-mode="dawn"],
+.ntd-clock-badge[data-mode="dusk"] {
+  color: #ffb36b;
+}
+
+.ntd-clock-time {
+  font-size: clamp(3.8rem, 8vw, 5.8rem);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 0.95;
+  color: #f4f4f5;
+  text-shadow: 0 2px 20px rgba(255,255,255,0.04);
+  margin-top: 48px;
+}
+
+.ntd-clock-date {
+  margin-top: 18px;
+  font-size: clamp(1.1rem, 2.2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(255,255,255,0.68);
+}
+
+.ntd-clock-subtle {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .ntd-clock-card {
+    min-height: 220px;
+    padding: 24px 24px 28px;
+    border-radius: 22px;
+  }
+
+  .ntd-clock-badge {
+    top: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.15rem;
+  }
+
+  .ntd-clock-time {
+    margin-top: 42px;
+  }
+}
