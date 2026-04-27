@@ -1,0 +1,118 @@
+/* =========================================================
+   Obsidian Buttons → Pill bar style (works like your example)
+   Target whichever element has the class (wrapper or link).
+   Usage in note: class pill school   |   class pill work   |   class pill expenses
+   Tweak colors/icons by changing the --variables below.
+   ========================================================= */
+
+/* 1) Base pill bar — matches .button.pill OR .button-link.pill */
+.buttons :is(.button, .button-link).pill,
+.pill { /* fallback so your test class still works */
+  /* ------- EDIT THESE VARIABLES ------- */
+  --bg: #2f2f2f;                 /* bar color (default) */
+  --text: #f5f7fa;               /* text color */
+  --border: rgba(255,255,255,.12);/* border color */
+  --radius: 12px;                /* corner roundness */
+  --shadow: 0 2px 0 rgba(0,0,0,.35); /* drop shadow */
+  --icon-bg: rgba(0,0,0,.18);    /* square behind emoji */
+  --emoji: "📘";                 /* default emoji if variant not set */
+
+  position: relative;
+  display: flex !important;      /* ensure horizontal layout */
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 100% !important;        /* full-width bar */
+  min-width: 100%;
+  padding: 10px 12px 10px 48px !important; /* space for left icon */
+  margin: 6px 0 !important;
+
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+
+  text-align: left !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  letter-spacing: .2px;
+  text-transform: none !important;
+  cursor: pointer;
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+}
+
+/* If the class lands on the inner link, make it fill the row cleanly */
+.buttons .button .button-link.pill {
+  padding: 10px 12px 10px 48px !important;
+  margin: 0 !important;
+  display: flex !important;
+  width: 100% !important;
+}
+
+/* 2) Left icon box (emoji) — auto-added */
+.buttons :is(.button, .button-link).pill::before,
+.pill::before {
+  content: var(--emoji);
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--icon-bg);
+  font-size: 18px;   /* change for bigger/smaller emoji */
+  line-height: 1;
+}
+
+/* 3) Hover/active feedback */
+.buttons :is(.button, .button-link).pill:is(:hover, :focus-visible),
+.pill:is(:hover, :focus-visible) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 rgba(0,0,0,.35) !important;
+}
+.buttons :is(.button, .button-link).pill:active,
+.pill:active {
+  transform: translateY(0);
+}
+
+/* 4) Stack nicely when multiple buttons are together */
+.buttons { display: grid; gap: 6px; }
+
+/* ----------------- VARIANTS -----------------
+   Attach one of these after "pill" and edit the variables:
+   --bg      → bar color
+   --icon-bg → little square behind emoji
+   --emoji   → icon character (keep quotes)
+-----------------------------------------------*/
+
+/* School (maroon) */
+.pill.school {
+  --bg: #563131;
+  --icon-bg: rgba(255,255,255,.10);
+  --emoji: "📘";
+}
+
+/* Work (deep navy) */
+.pill.work {
+  --bg: #1f2f45;
+  --icon-bg: rgba(255,255,255,.10);
+  --emoji: "💻";
+}
+
+/* My Expenses (olive/brown) */
+.pill.expenses {
+  --bg: #564a25;
+  --icon-bg: rgba(255,255,255,.10);
+  --emoji: "🧾";
+}
+
+/* Optional: adjust text/border for light theme */
+.theme-light .pill {
+  --text: #111;
+  --border: rgba(0,0,0,.12);
+}
