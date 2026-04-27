@@ -1,0 +1,19 @@
+/* If the current note's preview contains .enable-scroll, make any gallery in it horizontal */
+.markdown-preview-view:has(.enable-scroll) :is(
+  .gallery-grid,
+  .base-gallery,
+  .database-view .gallery-grid,
+  .database-view .grid,
+  .database-view .cards,
+  [data-view="gallery"]
+){
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: var(--size-4-2, 12px);
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding-bottom: 6px;
+  scroll-snap-type: x proximity;
+}
+
+/* add the grid fallback rules from Option A below this block exactly as written */
