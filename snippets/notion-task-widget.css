@@ -1,0 +1,146 @@
+.notion-task-widget {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(420px, 1fr);
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  min-height: 260px;
+}
+
+/* Left side */
+
+.nt-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px 48px;
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.nt-icon {
+  width: 72px;
+  height: 72px;
+  color: var(--text-faint);
+  display: grid;
+  place-items: center;
+  margin-bottom: 28px;
+}
+
+.nt-lucide-icon {
+  width: 68px;
+  height: 68px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nt-empty-title {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  max-width: 420px;
+}
+
+.nt-link {
+  color: var(--text-accent);
+  font-size: 1rem;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.nt-link:hover {
+  text-decoration: underline;
+}
+
+/* Right side */
+
+.nt-right {
+  padding: 48px 54px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nt-task-row {
+  display: grid;
+  grid-template-columns: 28px minmax(180px, 1fr) auto auto;
+  gap: 14px;
+  align-items: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  min-height: 30px;
+}
+
+.nt-task-row:hover .nt-task-title {
+  color: var(--text-normal);
+}
+
+.nt-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid var(--background-modifier-border-hover);
+  box-sizing: border-box;
+}
+
+.nt-task-title {
+  font-weight: 650;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nt-task-date,
+.nt-task-area {
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.nt-new-task {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 4px;
+  color: var(--text-faint);
+}
+
+.nt-plus {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.nt-none {
+  color: var(--text-faint);
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+  .notion-task-widget {
+    grid-template-columns: 1fr;
+  }
+
+  .nt-left {
+    border-right: none;
+    border-bottom: 1px solid var(--background-modifier-border);
+  }
+
+  .nt-right {
+    padding: 32px;
+  }
+
+  .nt-task-row {
+    grid-template-columns: 28px 1fr;
+    gap: 6px 14px;
+  }
+
+  .nt-task-date,
+  .nt-task-area {
+    grid-column: 2;
+  }
+}
