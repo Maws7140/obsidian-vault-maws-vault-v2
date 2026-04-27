@@ -1,0 +1,25 @@
+.make-it-wider {
+  /* --- Background --- */
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--radius-m);              /* Use the theme's medium border radius */
+
+  /* --- Text Styling --- */
+  color: var(--interactive-accent);            /* Use the theme's accent color for the text */
+  font-weight: var(--font-bold);             /* Use the theme's bold font weight */
+  
+  /* --- Sizing & Alignment (MODIFIED) --- */
+  min-width: 100%;                            /* Set a minimum width. Adjust this value as needed. */
+  padding: 8px 16px;                           /* Retain vertical padding and some horizontal for breathing room. */
+  text-align: center;
+
+  /* --- Interactivity --- */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* --- Style for Hovering over the Button --- */
+.make-it-wider:hover {
+  background-color: var(--interactive-accent-hover); /* Use accent color for hover background */
+  color: var(--text-on-accent);                     /* Use high-contrast text color for hover */
+}
