@@ -1,0 +1,7 @@
+.dashboard .callout { border-radius: 16px; padding: 12px 14px; }
+.dashboard .big-clock { font-size: 64px; font-weight: 700; letter-spacing: 2px; }
+.dashboard .nav-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin: 8px 0 4px;}
+.dashboard .pill { display: inline-block; text-align: center; padding: 10px 12px; border-radius: 12px; font-weight: 600; }
+.dashboard .pill-school { background: #3a2a3f; color: #fff; }
+.dashboard .pill-work { background: #1f2c3b; color: #fff; }
+.dashboard .pill-expenses { background: #4a3b23; color: #fff; }
