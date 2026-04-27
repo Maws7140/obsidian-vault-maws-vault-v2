@@ -1,0 +1,116 @@
+/* --- RAINBOW FOLDERS (SCAFFOLDING / CASCADING) --- */
+
+/* 1. Base Styling for Folders */
+/* Applies to all folder titles to give them the button/pill shape */
+.nav-folder-title[data-path] {
+    border-radius: 8px !important;
+    margin: 2px 4px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    transition: all 0.2s ease;
+}
+
+/* 2. Color Logic */
+/* We use the '^=' selector to say "starts with". 
+   This ensures sub-folders (e.g., "School/Math") inherit the color. */
+
+/* Red - Articles & subfolders */
+.nav-folder-title[data-path^="Articles"] {
+    background-color: #ff5c5c !important;
+    color: white !important;
+}
+
+/* Orange - Ideas & subfolders */
+.nav-folder-title[data-path^="Ideas"] {
+    background-color: #ffbd2e !important;
+    color: white !important;
+}
+
+/* Yellow - Job applications & subfolders */
+.nav-folder-title[data-path^="Job applications"] {
+    background-color: #f7d736 !important;
+    color: #222 !important; /* Dark text for yellow */
+}
+
+/* Green - Meta & subfolders */
+.nav-folder-title[data-path^="Meta"] {
+    background-color: #2ecc71 !important;
+    color: white !important;
+}
+
+/* Blue - PDFS & subfolders */
+.nav-folder-title[data-path^="PDFS"] {
+    background-color: #5d68e2 !important;
+    color: white !important;
+}
+
+/* Dark Slate - Projects & subfolders */
+.nav-folder-title[data-path^="Projects"] {
+    background-color: #34495e !important;
+    color: white !important;
+}
+
+/* Teal - Quick notes & subfolders */
+.nav-folder-title[data-path^="Quick notes"] {
+    background-color: #1abc9c !important;
+    color: white !important;
+}
+
+/* Light Blue - Resources & subfolders */
+.nav-folder-title[data-path^="Resources"] {
+    background-color: #3498db !important;
+    color: white !important;
+}
+
+/* Purple - School & subfolders */
+.nav-folder-title[data-path^="School"] {
+    background-color: #9b59b6 !important;
+    color: white !important;
+}
+
+/* Dark Red - Secrets & subfolders */
+.nav-folder-title[data-path^="Secrets"] {
+    background-color: #c0392b !important;
+    color: white !important;
+}
+
+/* Blue Grey - Tags & subfolders */
+.nav-folder-title[data-path^="Tags"] {
+    background-color: #607d8b !important;
+    color: white !important;
+}
+
+/* Forest Green - TaskNotes & subfolders */
+.nav-folder-title[data-path^="TaskNotes"] {
+    background-color: #16a085 !important;
+    color: white !important;
+}
+
+/* Pink - Your choice & subfolders */
+.nav-folder-title[data-path^="Your choice"] {
+    background-color: #e84393 !important;
+    color: white !important;
+}
+
+
+/* 3. Fix Arrow Colors for Scaffolding */
+/* Ensures arrows on sub-folders are also white */
+.nav-folder-title[data-path^="Articles"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Ideas"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Meta"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="PDFS"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Projects"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Quick notes"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Resources"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="School"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Secrets"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Tags"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="TaskNotes"] .nav-folder-collapse-indicator,
+.nav-folder-title[data-path^="Your choice"] .nav-folder-collapse-indicator {
+    color: rgba(255,255,255, 0.8) !important;
+}
+
+/* Dark arrow for Yellow folders */
+.nav-folder-title[data-path^="Job applications"] .nav-folder-collapse-indicator {
+    color: rgba(0,0,0, 0.5) !important;
+}
