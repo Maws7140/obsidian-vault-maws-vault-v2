@@ -1,0 +1,56 @@
+/* ===== Obsidian Timeline (DataviewJS) ===== */
+.dv-tl-wrap { position: relative; overflow-x: auto; padding: 0.25rem 0 0.5rem; }
+.dv-tl-svg { display: block; }
+
+/* Palette (adjust to taste) */
+:root{
+  --tl-blue:  var(--color-accent, #5b8def);
+  --tl-green: #4caf50;
+  --tl-red:   #e53935;
+  --tl-amber: #ffb300;
+  --tl-mute:  var(--text-muted, #9aa0a6);
+
+  --tl-row-even: hsl(0 0% 96% / 0.35);
+  --tl-row-odd:  hsl(0 0% 92% / 0.35);
+}
+.theme-dark{
+  --tl-row-even: hsl(0 0% 20% / 0.35);
+  --tl-row-odd:  hsl(0 0% 18% / 0.35);
+  --tl-mute: #b6bcc4;
+}
+
+/* background “zebra” rows + ticks */
+.tl-row { fill: transparent; }
+.tl-row.even { fill: var(--tl-row-even); }
+.tl-row.odd  { fill: var(--tl-row-odd); }
+
+.tl-tick { stroke: var(--background-modifier-border, #c6c6c6); stroke-width: 1; opacity: 0.6; }
+.tl-tick-label { font: 11px/1.2 var(--font-interface); fill: var(--text-muted); }
+
+/* Y-axis labels (project titles) */
+.tl-ylabel { font: 12px/1.2 var(--font-interface); fill: var(--text-normal); dominant-baseline: middle; }
+
+/* Bars */
+.tl-bar { opacity: 0.35; }
+.tl-bar-progress { fill: currentColor; opacity: 0.95; }
+.tl-bar-label { font: 11px/1.2 var(--font-interface); fill: var(--text-on-accent, #fff); pointer-events: none; }
+
+/* Tooltip */
+.tl-tooltip{
+  position: absolute; z-index: 50; max-width: 320px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-l, 0 6px 18px rgba(0,0,0,.35));
+  border-radius: 8px; padding: 8px 10px;
+  font: 12px/1.35 var(--font-interface);
+}
+.tl-tip-title{ font-weight: 600; margin-bottom: 4px; }
+.tl-tip-row{ display: grid; grid-template-columns: 80px 1fr; gap: 6px; }
+.tl-tip-row span:first-child{ color: var(--text-muted); }
+
+/* Legend */
+.tl-legend{ display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding: 6px 2px; }
+.tl-legend-title{ font-weight: 600; margin-right: 6px; color: var(--text-muted); }
+.tl-dot{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; translate: 0 1px; margin-right: 4px; }
+.tl-k{ margin-right: 10px; }
