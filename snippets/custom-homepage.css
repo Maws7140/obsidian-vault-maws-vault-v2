@@ -1,0 +1,180 @@
+/* Custom Homepage Styles */
+.custom-homepage .homepage-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--background-primary);
+}
+
+/* Search Section */
+.custom-homepage .search-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.custom-homepage .homepage-search {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  color: var(--text-normal);
+  transition: all 0.3s ease;
+}
+
+.custom-homepage .homepage-search:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+
+/* Folders Grid */
+.custom-homepage .folders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.custom-homepage .folder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  background: var(--background-secondary);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-normal);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-homepage .folder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--interactive-accent), 
+    var(--interactive-accent-hover));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.custom-homepage .folder-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--interactive-accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.custom-homepage .folder-card:hover::before {
+  transform: scaleX(1);
+}
+
+.custom-homepage .folder-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  filter: grayscale(0.2);
+}
+
+.custom-homepage .folder-name {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Menu Tabs */
+.custom-homepage .menu-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  background: var(--background-secondary);
+  border-radius: 8px;
+}
+
+.custom-homepage .menu-tab {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.custom-homepage .menu-tab:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.custom-homepage .menu-tab.active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 500;
+}
+
+/* Quick Actions */
+.custom-homepage .quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.custom-homepage .action-button {
+  padding: 0.8rem 1.2rem;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-normal);
+  text-align: center;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.custom-homepage .action-button:hover {
+  background: var(--background-modifier-hover);
+  border-color: var(--interactive-accent);
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-homepage .folders-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  
+  .custom-homepage .folder-card {
+    padding: 1rem 0.5rem;
+    min-height: 100px;
+  }
+  
+  .custom-homepage .folder-icon {
+    font-size: 2rem;
+  }
+  
+  .custom-homepage .menu-tabs {
+    justify-content: center;
+  }
+}
+
+/* Dark mode optimizations */
+.theme-dark .custom-homepage .folder-card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .custom-homepage .folder-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
