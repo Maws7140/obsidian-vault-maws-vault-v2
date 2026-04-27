@@ -1,0 +1,301 @@
+/* Activate per note with:
+   cssclasses:
+     - button-grid
+
+   Put real Buttons plugin codeblocks inside a custom callout:
+   > [!button-grid] Actions
+   > ```button
+   > name Example
+   > type command
+   > action Command Name
+   > ```
+*/
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"],
+.markdown-rendered.button-grid .callout[data-callout="button-grid"],
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  mix-blend-mode: normal;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-title,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-title,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-title {
+  display: none;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  align-items: stretch;
+  margin: 10px 0 14px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > p,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > p,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > p {
+  display: none;
+  margin: 0;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(1):last-of-type),
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(1):last-of-type),
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(1):last-of-type),
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(1):last-of-type),
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(1):last-of-type),
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(1):last-of-type) {
+  grid-template-columns: minmax(150px, 1fr);
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(2):last-of-type),
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(2):last-of-type),
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(2):last-of-type),
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(2):last-of-type),
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(2):last-of-type),
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(2):last-of-type) {
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(3):last-of-type),
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(3):last-of-type),
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> .el-pre:nth-of-type(3):last-of-type),
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(3):last-of-type),
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(3):last-of-type),
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content:has(> div:nth-of-type(3):last-of-type) {
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > .el-pre,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > .el-pre,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > .el-pre,
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > pre,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > pre,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > pre,
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > div:has(> button),
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > div:has(> button),
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > div:has(> button) {
+  min-width: 0;
+  margin: 0;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] button,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] button,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--interactive-normal);
+  color: var(--text-normal);
+  box-shadow: none;
+  font-weight: 750;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    background 120ms ease;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] button:hover,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] button:hover,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] button:hover {
+  transform: translateY(-1px);
+  background: var(--interactive-hover);
+  box-shadow: none;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :first-child button,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > :first-child button,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :first-child button {
+  border-radius: 10px;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :nth-child(2) button,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > :nth-child(2) button,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :nth-child(2) button {
+  border-radius: 10px;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :nth-last-child(2):nth-child(odd) button,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > :nth-last-child(2):nth-child(odd) button,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :nth-last-child(2):nth-child(odd) button {
+  border-radius: 10px;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :last-child button,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > :last-child button,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :last-child button {
+  border-radius: 10px;
+}
+
+.markdown-preview-view.button-grid .callout[data-callout="button-grid"] button > div,
+.markdown-rendered.button-grid .callout[data-callout="button-grid"] button > div,
+.markdown-source-view.button-grid .callout[data-callout="button-grid"] button > div {
+  width: 100% !important;
+}
+
+.markdown-preview-view.button-grid .button-grid-definitions,
+.markdown-rendered.button-grid .button-grid-definitions,
+.markdown-source-view.button-grid .button-grid-definitions {
+  margin-top: 18px;
+  padding: 8px 10px;
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.is-mobile .markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content,
+.is-mobile .markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content,
+.is-mobile .markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content {
+  grid-template-columns: 1fr;
+}
+
+.markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content,
+.markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content,
+.markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content {
+  display: block !important;
+  width: 460px !important;
+  max-width: 460px !important;
+  margin: 10px 0 14px !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  white-space: normal !important;
+}
+
+.markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content > *,
+.markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content > *,
+.markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content > * {
+  display: inline-block !important;
+  width: 230px !important;
+  max-width: 230px !important;
+  min-width: 230px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: top !important;
+}
+
+.markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .block-language-button,
+.markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] .block-language-button,
+.markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .block-language-button,
+.markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .el-pre,
+.markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] .el-pre,
+.markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .el-pre {
+  display: inline-block !important;
+  width: 230px !important;
+  max-width: 230px !important;
+  min-width: 230px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: top !important;
+}
+
+.markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] button,
+.markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] button,
+.markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] button {
+  width: 230px !important;
+  min-width: 230px !important;
+  max-width: 230px !important;
+  height: 104px !important;
+  min-height: 104px !important;
+  aspect-ratio: 1 / 1 !important;
+  padding: 9px !important;
+  font-size: 12px !important;
+  line-height: 1.1 !important;
+}
+
+.markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] button > div,
+.markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] button > div,
+.markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] button > div {
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 900px) {
+  .markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content {
+    width: 460px !important;
+    max-width: 460px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content {
+    grid-template-columns: 1fr;
+  }
+
+  .markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content,
+  .markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content {
+    width: 420px !important;
+    max-width: 420px !important;
+  }
+
+  .markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content > *,
+  .markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content > *,
+  .markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] > .callout-content > * {
+    width: 210px !important;
+    max-width: 210px !important;
+    min-width: 210px !important;
+  }
+
+  .markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .block-language-button,
+  .markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] .block-language-button,
+  .markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .block-language-button,
+  .markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .el-pre,
+  .markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] .el-pre,
+  .markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] .el-pre {
+    width: 210px !important;
+    max-width: 210px !important;
+    min-width: 210px !important;
+  }
+
+  .markdown-preview-view.button-grid.button-grid-square .callout[data-callout="button-grid"] button,
+  .markdown-rendered.button-grid.button-grid-square .callout[data-callout="button-grid"] button,
+  .markdown-source-view.button-grid.button-grid-square .callout[data-callout="button-grid"] button {
+    width: 210px !important;
+    min-width: 210px !important;
+    max-width: 210px !important;
+    height: 92px !important;
+    min-height: 92px !important;
+  }
+
+  .markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :first-child button,
+  .markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > :first-child button,
+  .markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :first-child button {
+    border-radius: 10px;
+  }
+
+  .markdown-preview-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :last-child button,
+  .markdown-rendered.button-grid .callout[data-callout="button-grid"] > .callout-content > :last-child button,
+  .markdown-source-view.button-grid .callout[data-callout="button-grid"] > .callout-content > :last-child button {
+    border-radius: 10px;
+  }
+}
