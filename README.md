@@ -3,7 +3,7 @@ modified: 2026-04-27
 ---
 # Maws Vault wotion edition - Obsidian Vault Template
 
-![Screenshot1][https://i.ibb.co/vC2n6yvS/2d33600f0c0d.png]
+![Screenshot1](https://i.ibb.co/vC2n6yvS/2d33600f0c0d.png)
 ![Screenshot2](https://i.ibb.co/jPTNBRLM/673c5816b67e.png)
 ![Screenshot3](https://i.ibb.co/F4wQSsFX/548bcef91ca5.png)
 ![Screenshot4](https://i.ibb.co/Dg5LmKs5/b972df93a88e.png)
